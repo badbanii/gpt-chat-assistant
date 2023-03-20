@@ -26,7 +26,8 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             settings.setSupportZoom(false)
-            settings.userAgentString=(System.getProperty("http.agent"))
+            settings.userAgentString=System.getProperty("http.agent")
+            settings.cacheMode=WebSettings.LOAD_CACHE_ELSE_NETWORK
             loadUrl("https://chat.openai.com/auth/login")
         }
     }
