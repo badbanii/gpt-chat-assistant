@@ -1,19 +1,20 @@
 package com.controversialz.gptassistant.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import by.kirich1409.viewbindingdelegate.viewBinding
-import com.controversialz.gptassistant.R
 import com.controversialz.gptassistant.databinding.ActivityMainBinding
-import com.controversialz.gptassistant.databinding.FragmentChatBinding
+
 
 class MainActivity : AppCompatActivity() {
-    private val binding by viewBinding(ActivityMainBinding::bind)
+    private var binding: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view: View = binding!!.root
+        setContentView(view)
         keepScreenAwake()
         forceDayMode()
     }
