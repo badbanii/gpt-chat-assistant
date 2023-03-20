@@ -3,6 +3,7 @@ package com.controversialz.gptassistant.chat
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.webkit.CookieManager
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -21,6 +22,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
     }
     @SuppressLint("SetJavaScriptEnabled")
     private fun setupWebView(webView: WebView) {
+        CookieManager.getInstance().setAcceptCookie(true)
         webView.apply {
             webViewClient = WebViewClient()
             settings.javaScriptEnabled = true
@@ -28,7 +30,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
             settings.setSupportZoom(false)
             settings.userAgentString=System.getProperty("http.agent")
             settings.cacheMode=WebSettings.LOAD_CACHE_ELSE_NETWORK
-            loadUrl("https://chat.openai.com/auth/login")
+            loadUrl("https://chat.openai.com/chat")
         }
     }
 }
