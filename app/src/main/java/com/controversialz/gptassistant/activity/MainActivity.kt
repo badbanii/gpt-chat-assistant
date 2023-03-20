@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun forceDayMode() {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
 
     private fun keepScreenAwake() {
